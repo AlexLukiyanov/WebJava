@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients info page</title>
+</head>
+<body>
+<h1>Список товаров в корзине</h1>
+<div th:each="b : ${basall}">
+    <span th:text="${b.getId()}"></span>
+    <span th:text="${b.getName()}"></span>
+    <span th:text="${b.getCost()}"></span>
+</div>
+</body>
+</html>
