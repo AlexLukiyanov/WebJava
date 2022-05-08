@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="product.js"></script>
+    <title>Продукты</title>
+</head>
+<body>
+<div class="container" ng-controller="productController">
+    <h3>Список продуктов</h3>
+    <table class="table table-hover" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>ID</td>
+            <td>Имя продукта</td>
+            <td>Количество</td>
+        </tr>
+        <tbody>
+        <tr ng-repeat="s in productList">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="changeScoreProduct(s.id, -1)">Убавить</button>
+                {{s.amount}}
+                <button class="btn btn-primary" ng-click="changeScoreProduct(s.id, 1)">Добавить</button>
+                <button class="btn btn-danger" ng-click="deleteProduct(s.id)">Удалить продукт</button>
+            </td>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
